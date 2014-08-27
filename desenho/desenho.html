@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Jogo - Desenho</title>
+	<script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/desenho.css">
+</head>
+<body>
+	<div id="container-desenho">
+		<div id="area-desenho">
+			<div id="caixa-desenho">
+				<div id="paint"></div>
+			</div>
+		</div>
+		<div id="ferramentas">
+			<div id="obj-cores">
+				<div class="botao-cor botao-selecionado" data-cor="#000" id="botao-preto"></div>
+				<div class="botao-cor" data-cor="#c00" id="botao-vermelho"></div>
+				<div class="botao-cor" data-cor="#00c" id="botao-azul"></div>
+				<div class="botao-cor" data-cor="#0c0" id="botao-verde"></div>
+			</div>
+			<div id="obj-ferramentas">
+				<div class="botao-ferramenta botao-selecionado" alt="pincel" title="Pincel" id="botao-pincel"></div>
+				<div class="botao-ferramenta" alt="borracha" title="Borracha" id="botao-borracha"></div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/desenhar.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.botao-cor').click(function(){
+				$('.botao-cor').each(function(){
+					$(this).removeClass('botao-selecionado');
+				});
+				$(this).addClass('botao-selecionado');
+				strokeColor = $(this).data('cor');
+			});
+
+			$('.botao-ferramenta').click(function(){
+				$('.botao-ferramenta').each(function(){
+					$(this).removeClass('botao-selecionado');
+				});
+				$(this).addClass('botao-selecionado');
+				mode = $(this).attr('alt');
+				$('#canvas').removeClass().addClass('area-' + mode);
+			});
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+@charset "utf-8";
+
+* {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+			box-sizing: border-box;
+}
+
+#container-desenho{
+	margin: 0 auto;
+}
+
+#container-desenho:before,
+#container-desenho:after
+#ferramentas:before,
+#ferramentas:after{
+	display: table;
+	content: " ";
+}
+
+#container-desenho:after,
+#ferramentas:after{
+	clear: both;
+}
+
+#ferramentas{
+	width: 750px;
+	padding: 6px;
+	background-color: #4986e7;
+	border-right: 0;
+	border-top: 1px solid #a6a6ff;
+}
+
+#area-desenho{
+	border: 5px solid #4986e7;
+	width: 750px;
+	height: 450px;
+}
+
+#caixa-desenho{
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+	box-shadow: inset 0 0 5px rgba(0,0,0,.6);
+	cursor: crosshair;
+}
+
+/*.area-pincel{
+	cursor: url(../images/cursor-pincel.png), default;
+}*/
+
+.area-borracha{
+	cursor: url(../images/cursor-borracha.png), auto;
+}
+
+.botao-cor,
+.botao-ferramenta{
+	cursor: pointer;
+	background-color: #4986e7;
+	width: 46px;
+	height: 46px;
+	border: 3px solid #4986e7;
+	float: left;
+}
+
+.botao-cor:hover,
+.botao-ferramenta:hover{
+	border-color: #a6a6e7;
+	background-color: #a6a6e7;
+}
+
+.botao-selecionado{
+	background-color: #a6a6e7;
+	border-color: #a6a6e7;
+}
+
+#botao-preto,
+#botao-vermelho,
+#botao-verde,
+#botao-azul{
+	background-repeat: no-repeat;
+	background-size: 40px;
+}
+
+#botao-preto{
+	background-image: url(../images/cores/preto.png);
+}
+
+#botao-vermelho{
+	background-image: url(../images/cores/vermelho.png);
+}
+
+#botao-azul{
+	background-image: url(../images/cores/azul.png);
+}
+
+#botao-verde{
+	background-image: url(../images/cores/verde.png);
+}
+
+#botao-borracha{
+	background-image: url(../images/obj-borracha.png);
+	background-repeat: no-repeat;
+	background-size: 39px;
+	background-position: 1px;
+}
+
+#botao-pincel{
+	background-image: url(../images/obj-pincel.png);
+	background-repeat: no-repeat;
+	background-size: 39px;
+	background-position: -1px 1px;
+}
+
+#paint{
+	width: 100%;
+	height: 100%;
+}
+
+#canvas{
+	background-color: #fff;
+}
+
+@media (min-width: 768px) {
+	#container-desenho{
+		width: 750px;
+	}
+
+	#obj-cores,
+	#obj-ferramentas{
+		display: block;
+	}
+}
+
+@media (min-width: 992px) {
+	#container-desenho{
+		width: 970px;
+	}
+
+	#ferramentas{
+		width: 151px;
+		height: 450px;
+		float: right;
+		border-top: 0;
+		border-right: 1px solid #a6a6ff;
+	}
+
+	#area-desenho{
+		float: right;
+	}
+
+	#obj-cores:after,
+	#obj-ferramentas:after{
+		display: table;
+		content: " ";
+		clear: both;
+	}
+}
