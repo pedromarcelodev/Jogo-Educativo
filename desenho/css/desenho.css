@@ -53,6 +53,15 @@
 	cursor: url(../images/cursor-borracha.png), auto;
 }
 
+.area-cor{
+	box-shadow: 0 0 4px rgba(166, 166, 231, .6);
+	background-color: rgba(255,255,255,.6);
+}
+
+.area-cor:focus{
+	outline: none;
+}
+
 .botao-cor,
 .botao-ferramenta{
 	cursor: pointer;
